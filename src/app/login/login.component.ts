@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Routes, RouterModule, Router } from '@angular/router';
 import {MatSnackBar} from '@angular/material/snack-bar';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -9,9 +10,9 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class LoginComponent implements OnInit {
 
 constructor(private router: Router, private _snackBar: MatSnackBar) { }
-submitLogin(userId, passWord){
+submit(userId, passWord){
 	if(userId=="admin" || passWord=="admin"){
-		this.router.navigate(['/mainModule']);
+		this.router.navigate(['/main']);
 	}else{
 		this._snackBar.open('Invalid Details', '', {
   			duration: 1000,
