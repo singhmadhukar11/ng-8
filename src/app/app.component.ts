@@ -38,8 +38,8 @@ export class AppComponent {
     ];
 
     selectedIdx = 0;
-    label:any = "MAP";
-    icon:any = "map";
+    label:any ;
+    icon:any ;
     selectItem(index,menu):void {
         this.selectedIdx = index;
         this.label = menu.name;
