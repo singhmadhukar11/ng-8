@@ -15,25 +15,12 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
-    MatInputModule,
-    MatToolbarModule,
-    MatSidenavModule,
-	  MatCardModule,
- 	  MatListModule,
-    MatIconModule,
-    MatButtonModule,
-	  MatProgressSpinnerModule,
-    MatTooltipModule,
-	  MatDialogModule,
-    MatFormFieldModule,
-    MatSelectModule,
-	  MatMenuModule,
-	  MatTableModule,
-    MatCheckboxModule
+    CommonModule
   ],
   exports: [
     MatInputModule,
@@ -50,7 +37,9 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatSelectModule,
 	  MatMenuModule,
 	  MatTableModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    FlexLayoutModule,
+    MatSnackBarModule
   ]
 })
 export class MaterialModule { }
