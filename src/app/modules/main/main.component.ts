@@ -44,6 +44,10 @@ columnDefs = [
     params.api.sizeColumnsToFit();
    }
 
+  onRowClicked(event: any) {
+   console.log('row', event);
+ }
+
 ngOnInit() {
   this.rowData = this.http.get(this.mainservice.gridUrl);
 }

@@ -26,6 +26,7 @@
     class="ag-theme-material"
     [rowData]="rowData | async"
     [columnDefs]="columnDefs"
+    (rowClicked)='onRowClicked($event)'
     (gridReady)="onGridReady($event)"
     >
 </ag-grid-angular>
