@@ -8,9 +8,15 @@ import { ViewComponent } from './view/view.component';
 
 
 const routes: Routes = [
-{ path: '', component: MainComponent },
-{ path: 'add', component: AddComponent },
-{ path: 'view', component: ViewComponent },
+{ path: '', component: MainComponent,
+children: [
+      { path: '', component: ViewComponent },
+      { path: 'add', component: AddComponent },
+      { path: 'add/view', component: ViewComponent }
+    ]
+ },
+// { path: 'add', component: AddComponent },
+// { path: 'view', component: ViewComponent },
 ];
 
 @NgModule({

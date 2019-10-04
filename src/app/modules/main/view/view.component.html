@@ -1,1 +1,18 @@
-<p>view works!</p>
+<div>
+  <mat-divider></mat-divider>
+  <mat-toolbar  class="header-hgt40">
+    <span class="header-spacer"></span>
+       <button mat-icon-button style="margin-right: 15px;" routerLink="add">
+    <mat-icon>add_circle_outline</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-divider></mat-divider>
+</div>
+  <ag-grid-angular 
+    style="width: 100%; height: calc(100vh - 95px);" 
+    class="ag-theme-material"
+    [rowData]="rowData"
+    [columnDefs]="columnDefs"
+    (rowClicked)='onRowClicked($event)'
+    (gridReady)="onGridReady($event)">
+</ag-grid-angular>

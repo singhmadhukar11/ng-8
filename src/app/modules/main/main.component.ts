@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Routes, RouterModule, Router } from '@angular/router';
 import { MainService } from './main.service';
 import { HttpClient } from '@angular/common/http';
+import { GlobalService } from '../../global.service';
 export interface type{
   name:string;
   icon:string;
@@ -15,7 +16,7 @@ export interface type{
 export class MainComponent implements OnInit {
   title = 'Angular-ie';
   today = new Date();
-  constructor(private router: Router, private mainservice: MainService, private http: HttpClient) {}
+  constructor(private router: Router, private mainservice: MainService, private http: HttpClient, private globalService:GlobalService) {}
   mainMenu: type[] = [{
           name: 'home',
           icon: 'home',
@@ -32,23 +33,30 @@ export class MainComponent implements OnInit {
       this.icon = menu.icon;
   }
 
-columnDefs = [
-        {headerName: 'Make', field: 'make', sortable: true, filter: true},
-        {headerName: 'Model', field: 'model', sortable: true, filter: true},
-        {headerName: 'Price', field: 'price', sortable: true, filter: true}
-    ];
+// columnDefs = [
+//         {headerName: 'Store Name', field: 'name', sortable: true, filter: true},
+//         {headerName: 'Address', field: 'address', sortable: true, filter: true},
+//         {headerName: 'Phone No', field: 'phone', sortable: true, filter: true},
+//         {headerName: 'Email', field: 'email', sortable: true, filter: true},
+//     ];
 
-    rowData: any;
+//     rowData: any;
 
-  onGridReady(params) {
-    params.api.sizeColumnsToFit();
-   }
+//   onGridReady(params) {
+//     params.api.sizeColumnsToFit();
+//    }
 
-  onRowClicked(event: any) {
-   console.log('row', event);
- }
-
+//   onRowClicked(event: any) {
+//    console.log('row', event);
+//  }
+// usersData :any = [];
+// getAllStudents() {
+//     this.globalService.getList().subscribe(response => {
+//       this.rowData = response;
+//     })
+//   }
 ngOnInit() {
-  this.rowData = this.http.get(this.mainservice.gridUrl);
+  // this.getAllStudents();
+  // this.rowData = this.http.get(this.mainservice.gridUrl);
 }
 }

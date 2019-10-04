@@ -11,7 +11,8 @@ export class LoginComponent implements OnInit {
 
 constructor(private router: Router, private _snackBar: MatSnackBar) { }
 submit(userId, passWord){
-	if(userId=="admin" || passWord=="admin"){
+	// this.router.navigate(['/main']);
+	if(userId=="admin" && passWord=="admin"){
 		this.router.navigate(['/main']);
 	}else{
 		this._snackBar.open('Invalid Details', '', {

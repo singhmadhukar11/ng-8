@@ -12,7 +12,8 @@
   </div>
 </mat-menu>
 </mat-toolbar>
-<div>
+<router-outlet></router-outlet>
+<!-- <div>
   <mat-divider></mat-divider>
   <mat-toolbar  class="header-hgt40">
     <span class="header-spacer"></span>
@@ -21,13 +22,15 @@
   </button>
 </mat-toolbar>
 <mat-divider></mat-divider>
+
   <ag-grid-angular 
     style="width: 100%; height: calc(100vh - 95px);" 
     class="ag-theme-material"
-    [rowData]="rowData | async"
+    [rowData]="rowData"
     [columnDefs]="columnDefs"
     (rowClicked)='onRowClicked($event)'
     (gridReady)="onGridReady($event)"
     >
 </ag-grid-angular>
 </div>
+ -->

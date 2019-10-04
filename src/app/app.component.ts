@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Routes, RouterModule, Router } from '@angular/router';
+import { GlobalService } from './global.service';
 export interface type{
     name:string;
     icon:string;
@@ -13,7 +14,7 @@ export interface type{
 export class AppComponent {
     title = 'Angular-ie';
     today = new Date();
-    constructor(private router: Router) {}
+    constructor(private router: Router, private globalService:GlobalService) {}
     sideNavmenus: type[] = [{
            name: 'map',
             icon: 'map',
@@ -45,9 +46,16 @@ export class AppComponent {
         this.label = menu.name;
         this.icon = menu.icon;
     }
-
+usersData :any = [];
+getAllStudents() {
+    this.globalService.getList().subscribe(response => {
+      console.log(response);
+      this.usersData = response;
+    })
+  }
 
   ngOnInit() {
+    this.getAllStudents();
     this.router.navigate([''])
   }
 }
