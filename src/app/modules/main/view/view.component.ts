@@ -12,10 +12,10 @@ export class ViewComponent implements OnInit {
   constructor( private globalService:GlobalService) { }
 
 columnDefs = [
-        {headerName: 'Store Name', field: 'name', sortable: true, filter: true},
-        {headerName: 'Address', field: 'address', sortable: true, filter: true},
-        {headerName: 'Phone No', field: 'phone', sortable: true, filter: true},
-        {headerName: 'Email', field: 'email', sortable: true, filter: true},
+        {headerName: 'STORE NAME', field: 'name', sortable: true, filter: true},
+        {headerName: 'ADDRESS', field: 'address', sortable: true, filter: true},
+        {headerName: 'PHONE NO', field: 'phone', sortable: true, filter: true},
+        {headerName: 'EMAIL', field: 'email', sortable: true, filter: true},
     ];
 
     rowData: any;
