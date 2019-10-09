@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AgGridModule } from 'ag-grid-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent
@@ -19,7 +20,8 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     BrowserAnimationsModule,
     AgGridModule.withComponents([]),
     HttpClientModule,
-    LeafletModule.forRoot()
+    LeafletModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

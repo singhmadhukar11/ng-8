@@ -1,16 +1,17 @@
 <mat-toolbar color="primary" class="header-hgt52">
     <span style="margin-top: 7px;"><mat-icon>{{icon}}</mat-icon></span><span class="dash-label">{{label}}</span>
     <span class="header-spacer"></span>
-       <button mat-icon-button [matMenuTriggerFor]="belowMenu" class="toolbr-icn-siz">
+   <!-- <button mat-icon-button [matMenuTriggerFor]="belowMenu" class="toolbr-icn-siz">
     <mat-icon>apps</mat-icon>
-  </button>
-<mat-menu #belowMenu="matMenu" yPosition="below" class="app-menu">
+  </button> -->
+<!-- <mat-menu #belowMenu="matMenu" yPosition="below" class="app-menu">
   <div class="app-menu"  fxLayout="row wrap">
     <button  mat-icon-button *ngFor="let menu of mainMenu;let i = index" (click)="selectItem(i,menu)" routerLink="/{{menu.name}}" [ngClass]="{'active': selectedIdx == i}" matTooltip="{{menu.name}}" class="active-hover toolbr-icn-siz">
     <mat-icon [ngStyle]="{'color': menu.color}">{{menu.icon}}</mat-icon>
   </button>
   </div>
-</mat-menu>
+</mat-menu> -->
+ <button mat-button color="accent" (click)="logout()" routerLink="logout">Logout</button>
 </mat-toolbar>
 <router-outlet></router-outlet>
 <!-- <div>

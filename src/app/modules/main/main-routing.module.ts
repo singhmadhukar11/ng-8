@@ -17,8 +17,8 @@ children: [
 	  { path: '', component: ViewComponent }
     ]
  },
-	  { path: 'view', component: ViewComponent }
-
+	  { path: 'view', component: ViewComponent },
+	  { path: 'logout', loadChildren: () => import('../../login/login.module').then(m => m.LoginModule) }
 ];
 
 @NgModule({

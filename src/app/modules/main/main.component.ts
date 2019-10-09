@@ -3,6 +3,7 @@ import { Routes, RouterModule, Router } from '@angular/router';
 import { MainService } from './main.service';
 import { HttpClient } from '@angular/common/http';
 import { GlobalService } from '../../global.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 export interface type{
   name:string;
   icon:string;
@@ -16,7 +17,7 @@ export interface type{
 export class MainComponent implements OnInit {
   title = 'Angular-ie';
   today = new Date();
-  constructor(private router: Router, private mainservice: MainService, private http: HttpClient, private globalService:GlobalService) {}
+  constructor(private router: Router, private mainservice: MainService, private http: HttpClient, private globalService:GlobalService, private _snackBar: MatSnackBar) {}
   mainMenu: type[] = [{
           name: 'home',
           icon: 'home',
@@ -31,6 +32,13 @@ export class MainComponent implements OnInit {
       this.selectedIdx = index;
       this.label = menu.name;
       this.icon = menu.icon;
+  }
+
+  logOut(){
+    // this.router.navigate(['/logout']);
+    this._snackBar.open('LogOut Successfully', '', {
+        duration: 1000,
+    });
   }
 
 // columnDefs = [

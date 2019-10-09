@@ -1,4 +1,5 @@
 <div>
+<div>
   <mat-divider></mat-divider>
   <mat-toolbar  class="header-hgt40">
     <span></span>
@@ -11,26 +12,30 @@
 </div>
 <div fxLayout="row wrap" fxLayoutAlign="space-around center" style="margin-top: 1.5%;">
   <mat-form-field fxFlex="30">
-    <input matInput placeholder="Store Name" value="">
+    <input matInput placeholder="Store Name" value="" [(ngModel)]="name">
   </mat-form-field>
 
    <mat-form-field fxFlex="30">
-    <input matInput placeholder="Address" value="">
+    <input matInput placeholder="Address" value="" [(ngModel)]="address">
   </mat-form-field>
 
    <mat-form-field fxFlex="30">
-    <input matInput placeholder="Phone No" value="">
+    <input matInput placeholder="Phone No" value="" [(ngModel)]="phone">
   </mat-form-field>
 
    <mat-form-field fxFlex="30">
-    <input matInput placeholder="Email" value="">
+    <input matInput placeholder="Email" value="" [(ngModel)]="email">
      </mat-form-field>
 
      <mat-form-field fxFlex="30">
-    <input matInput placeholder="Location lat" value="">
+    <input matInput placeholder="Location lat" value="{{lat}}" [(ngModel)]="lat">
   </mat-form-field>
 
    <mat-form-field fxFlex="30">
-    <input matInput placeholder="Location Lon" value="">
+    <input matInput placeholder="Location Lon" value="{{lng}}" [(ngModel)]="lng">
   </mat-form-field>
+</div>
+<div fxLayout="row" fxLayoutAlign="end end" style="margin: 0px 20px;">
+   <button mat-raised-button color="primary" (click)="Submit()">Submit</button>
+</div>
 </div>

@@ -9,6 +9,7 @@ import { AddComponent } from './add/add.component';
 import { ViewComponent } from './view/view.component';
 import { MapViewComponent } from './map-view/map-view.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     MainRoutingModule,
     MaterialModule,
     AgGridModule.withComponents([]),
-    LeafletModule
+    LeafletModule,
+    FormsModule
   ]
 })
 export class MainModule { }

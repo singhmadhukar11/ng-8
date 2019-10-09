@@ -14,6 +14,8 @@ submit(userId, passWord){
 	// this.router.navigate(['/main']);
 	if(userId=="admin" && passWord=="admin"){
 		this.router.navigate(['/main']);
+	}else if(userId=="user" && passWord=="user"){
+		this.router.navigate(['/main']);
 	}else{
 		this._snackBar.open('Invalid Details', '', {
   			duration: 1000,
