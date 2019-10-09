@@ -31,7 +31,7 @@ columnDefs = [
    console.log('row', event);
     this.sendData = event.data;
     this.mainService.shareRowdta = this.sendData;
-    this.router.navigate(['main/detail']);
+    this.router.navigate(['/main/detail']);
  }
 usersData :any = [];
 getAllStudents() {

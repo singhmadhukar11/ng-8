@@ -2,10 +2,10 @@
   <mat-divider></mat-divider>
   <mat-toolbar  class="header-hgt40">
     <span></span>
-       <button mat-icon-button style="margin-right: 15px;" routerLink="">
+       <button mat-icon-button style="margin-right: 15px;" routerLink="/main/view">
     <mat-icon>arrow_back</mat-icon>
   </button>
-  <span class="com-menu-txt">Details</span>
+  <span class="com-menu-txt">{{mainService.shareRowdta.name}}</span>
 </mat-toolbar>
 <mat-divider></mat-divider>
 </div>
@@ -38,5 +38,5 @@
 </div>
 <div class="map-height"
      leaflet
-     [leafletOptions]="options" [leafletLayers]="layers">
+     [leafletOptions]="options" [leafletLayers]="layers" >
 </div>

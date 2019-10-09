@@ -47,7 +47,7 @@ export class AppComponent {
         this.icon = menu.icon;
     }
 usersData :any = [];
-getAllStudents() {
+getAllStore() {
     this.globalService.getList().subscribe(response => {
       console.log(response);
       this.usersData = response;
@@ -55,7 +55,7 @@ getAllStudents() {
   }
 
   ngOnInit() {
-    this.getAllStudents();
-    this.router.navigate([''])
+    this.getAllStore();
+    this.router.navigate(['']);
   }
 }

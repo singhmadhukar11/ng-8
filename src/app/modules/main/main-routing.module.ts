@@ -12,7 +12,7 @@ import { DetailComponent } from './detail/detail.component';
 
 const routes: Routes = [
 	{ path: '', component: MainComponent,
-children: [
+	children: [
       { path: 'add', component: AddComponent },
 	  { path: 'view', component: ViewComponent },
 	  { path: 'map', component: MapViewComponent },

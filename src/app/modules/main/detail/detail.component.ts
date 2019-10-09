@@ -13,9 +13,7 @@ export class DetailComponent implements OnInit {
   constructor(private mainService: MainService) { }
 options = {
     layers: [
-      tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: 'Madhukar'
-      }),
+      tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'),
       marker([ this.mainService.shareRowdta.lat, this.mainService.shareRowdta.lon ])
     ],
     zoom: 5,
