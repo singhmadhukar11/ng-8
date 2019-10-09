@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { GlobalService } from '../../../global.service';
-
+import { Routes, RouterModule, Router } from '@angular/router';
+import { MainService } from '../main.service';
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
@@ -9,7 +10,9 @@ import { GlobalService } from '../../../global.service';
 })
 export class ViewComponent implements OnInit {
 
-  constructor( private globalService:GlobalService) { }
+  constructor( private router: Router,private globalService:GlobalService, private mainService: MainService) { }
+
+  sendData = [];
 
 columnDefs = [
         {headerName: 'STORE NAME', field: 'name', sortable: true, filter: true},
@@ -26,6 +29,9 @@ columnDefs = [
 
   onRowClicked(event: any) {
    console.log('row', event);
+    this.sendData = event.data;
+    this.mainService.shareRowdta = this.sendData;
+    this.router.navigate(['main/detail']);
  }
 usersData :any = [];
 getAllStudents() {

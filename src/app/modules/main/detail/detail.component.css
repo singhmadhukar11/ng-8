@@ -1,0 +1,18 @@
+.header-hgt40{
+    height: 40px;
+}
+.header-icon {
+  padding: 0 14px;
+}
+
+.header-spacer {
+  flex: 1 1 auto;
+}
+.com-menu-txt{
+	color: grey;
+    font-size: 15px;
+}
+.map-height {
+  height: 61vh;
+  padding: 0;
+}

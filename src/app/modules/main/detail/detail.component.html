@@ -1,0 +1,42 @@
+<div>
+  <mat-divider></mat-divider>
+  <mat-toolbar  class="header-hgt40">
+    <span></span>
+       <button mat-icon-button style="margin-right: 15px;" routerLink="">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+  <span class="com-menu-txt">Details</span>
+</mat-toolbar>
+<mat-divider></mat-divider>
+</div>
+  <div fxLayout="row wrap" fxLayoutAlign="space-around center" style="margin-top: 1.5%;">
+  <mat-form-field fxFlex="30">
+    <input matInput placeholder="Store Name" disabled value="{{mainService.shareRowdta.name}}">
+  </mat-form-field>
+
+   <mat-form-field fxFlex="30">
+    <input matInput placeholder="Address" disabled value="{{mainService.shareRowdta.address}}">
+  </mat-form-field>
+
+   <mat-form-field fxFlex="30">
+    <input matInput placeholder="Phone No" disabled value="{{mainService.shareRowdta.phone}}">
+  </mat-form-field>
+
+   <mat-form-field fxFlex="30">
+    <input matInput placeholder="Email" disabled value="{{mainService.shareRowdta.email}}">
+     </mat-form-field>
+     <div fxFlex="30"></div>
+     <div fxFlex="30"></div>
+
+     <!-- <mat-form-field fxFlex="30">
+    <input matInput placeholder="Location lat" disabled value="{{lat}}" [(ngModel)]="lat">
+  </mat-form-field> -->
+
+   <!-- <mat-form-field fxFlex="30">
+    <input matInput placeholder="Location Lon" disabled value="{{lng}}" [(ngModel)]="lng">
+  </mat-form-field> -->
+</div>
+<div class="map-height"
+     leaflet
+     [leafletOptions]="options" [leafletLayers]="layers">
+</div>

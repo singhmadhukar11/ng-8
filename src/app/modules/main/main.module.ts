@@ -10,13 +10,15 @@ import { ViewComponent } from './view/view.component';
 import { MapViewComponent } from './map-view/map-view.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { FormsModule } from '@angular/forms';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
   MainComponent,
   AddComponent,
   ViewComponent,
-  MapViewComponent
+  MapViewComponent,
+  DetailComponent
   ],
   imports: [
     CommonModule,

@@ -37,7 +37,7 @@ export class MainComponent implements OnInit {
   logOut(){
     // this.router.navigate(['/logout']);
     this._snackBar.open('LogOut Successfully', '', {
-        duration: 1000,
+        duration: 1000
     });
   }
 

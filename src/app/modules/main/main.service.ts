@@ -5,6 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class MainService {
  
-  gridUrl = "https://api.myjson.com/bins/15psn9"
+  gridUrl = "https://api.myjson.com/bins/15psn9";
+
+  shareRowdta = [];
+
   constructor() { }
 }
