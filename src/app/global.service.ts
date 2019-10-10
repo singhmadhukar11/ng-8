@@ -20,4 +20,6 @@ export class GlobalService {
       .get<users>(this.base_path)
   };
 
+  
+
 }

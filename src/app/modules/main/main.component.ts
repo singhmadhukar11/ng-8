@@ -34,12 +34,19 @@ export class MainComponent implements OnInit {
       this.icon = menu.icon;
   }
 
-  logOut(){
-    // this.router.navigate(['/logout']);
-    this._snackBar.open('LogOut Successfully', '', {
-        duration: 1000
-    });
-  }
+logOut() {
+    if (confirm("Do you want to LogOut ?")) {
+        this.router.navigate(['main/logout']);
+        this._snackBar.open('LogOut Successfully', '', {
+            duration: 1000
+        });
+    } else {
+        this._snackBar.open('LogOut Cancel', '', {
+            duration: 1000
+        });
+
+    }
+}
 
 // columnDefs = [
 //         {headerName: 'Store Name', field: 'name', sortable: true, filter: true},

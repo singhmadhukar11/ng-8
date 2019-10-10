@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MainService } from '../main.service';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AddComponent implements OnInit {
 lng:any;
 lat:any;
-constructor() {
+constructor(private mainService : MainService) {
 if (navigator)
     {
     navigator.geolocation.getCurrentPosition( pos => {
@@ -17,10 +17,12 @@ if (navigator)
       });
    }}
 
-   Submit(){
-   	console.log("Submited")
-   }
-
+   Submit(lat) {
+  this.mainService.createItem(lat).subscribe(
+    response => console.log(response),
+    err => console.log(err)
+  );
+}
 
   ngOnInit() {
   }

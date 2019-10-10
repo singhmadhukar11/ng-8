@@ -10,16 +10,21 @@ import { latLng, tileLayer, marker } from 'leaflet';
 })
 export class DetailComponent implements OnInit {
 
-  constructor(private mainService: MainService) { }
-options = {
+  constructor(private mainService: MainService) {  }
+
+      // lat: any = this.mainService.shareRowdta.lat;
+      // lon: any = this.mainService.shareRowdta.lon;
+      lat = 20.5937;
+      lon = 78.9629;
+
+  options = {
     layers: [
       tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'),
-      marker([ this.mainService.shareRowdta.lat, this.mainService.shareRowdta.lon ])
+      marker([ this.lat, this.lon ])
     ],
     zoom: 5,
-    center: latLng([ this.mainService.shareRowdta.lat, this.mainService.shareRowdta.lon ])
+    center: latLng([ this.lat, this.lon  ])
   };
-
 
   ngOnInit() {
   	this.mainService.shareRowdta;
