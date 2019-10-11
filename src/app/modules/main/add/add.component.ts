@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../main.service';
+import { FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -8,7 +9,15 @@ import { MainService } from '../main.service';
 export class AddComponent implements OnInit {
 lng:any;
 lat:any;
-constructor(private mainService : MainService) {
+
+ profileForm = this.fb.group({
+    name: ['', Validators.required],
+    address: ['', Validators.required],
+    phone: ['', Validators.required],
+    email: ['', Validators.required]
+  });
+
+constructor(private mainService : MainService, private fb: FormBuilder) {
 if (navigator)
     {
     navigator.geolocation.getCurrentPosition( pos => {
@@ -17,12 +26,23 @@ if (navigator)
       });
    }}
 
-   Submit(lat) {
-  this.mainService.createItem(lat).subscribe(
+   onSubmit() {
+  console.log(this.profileForm.value);
+  this.mainService.createItem(this.profileForm.value).subscribe(
     response => console.log(response),
     err => console.log(err)
   );
+  
 }
+// updateName() {
+//     this.name.setValue('Nancy');
+//   }
+   // Submit(lat) {
+  // this.mainService.createItem(lat).subscribe(
+  //   response => console.log(response),
+  //   err => console.log(err)
+  // );
+// }
 
   ngOnInit() {
   }

@@ -19,6 +19,12 @@ columnDefs = [
         {headerName: 'ADDRESS', field: 'address', sortable: true, filter: true},
         {headerName: 'PHONE NO', field: 'phone', sortable: true, filter: true},
         {headerName: 'EMAIL', field: 'email', sortable: true, filter: true},
+        {
+            field: "", 
+            width: 110, 
+            cellRenderer: function clickNextRendererFunc(){
+                    // return '<button (click)="alert("Clicked")">Delete</button>';
+            }}
     ];
 
     rowData: any;
@@ -27,12 +33,22 @@ columnDefs = [
     params.api.sizeColumnsToFit();
    }
 
-  onRowClicked(event: any) {
+
+    deleteRow(event, index){
+     this.mainService.removeItem(event, index).subscribe(data => {
+            alert('Success');
+          })
+     }
+
+  onRowClicked(event: any, index) {
    console.log('row', event);
+   // this.deleteRow(event, index);
     this.sendData = event.data;
     this.mainService.shareRowdta = this.sendData;
     this.router.navigate(['/main/detail']);
  }
+
+
 usersData :any = [];
 getAllStudents() {
     this.globalService.getList().subscribe(response => {

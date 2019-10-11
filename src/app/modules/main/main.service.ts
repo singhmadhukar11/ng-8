@@ -14,11 +14,11 @@ export class MainService {
 
  // Create a new item
   createItem(item){
-    return this.http.post<any>(this.base_path, "")
+    return this.http.post<any>(this.base_path, item)
   };
 
   removeItem(item, index): Observable<any> {
-    return this.http.delete(this.base_path + "?id=" + item)
+    return this.http.delete(this.base_path + "?id=" + item.data._id)
   };
   
 }

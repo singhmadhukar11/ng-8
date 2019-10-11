@@ -36,15 +36,15 @@ app.post("/api/user", function(req, res) {
   );
 });
 
-// app.delete("/api/user", function (req, res) {
-//   console.log(req.query);
-//     MongoClient.connect(url,{ useUnifiedTopology: true , useNewUrlParser: true }, function (err, client) {
-//         var db = client.db("ng");
-//         db.collection("users").deleteOne({ _id: new mongo.ObjectId(req.query.id) },function (err, result) {
-//           console.log("Deleted");
-//         });
-//     });
-// });
+app.delete("/api/user", function (req, res) {
+  console.log(req.query);
+    MongoClient.connect(url,{ useUnifiedTopology: true , useNewUrlParser: true }, function (err, client) {
+        var db = client.db("ng");
+        db.collection("users").deleteOne({ _id: new mongo.ObjectId(req.query.id) },function (err, result) {
+          console.log("Deleted");
+        });
+    });
+});
 
 
 app.listen(3000, function () {

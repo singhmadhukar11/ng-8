@@ -1,4 +1,6 @@
 <div>
+  
+
 <div>
   <mat-divider></mat-divider>
   <mat-toolbar  class="header-hgt40">
@@ -10,32 +12,38 @@
 </mat-toolbar>
 <mat-divider></mat-divider>
 </div>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
 <div fxLayout="row wrap" fxLayoutAlign="space-around center" style="margin-top: 1.5%;">
   <mat-form-field fxFlex="30">
-    <input matInput placeholder="Store Name" value="" [(ngModel)]="name">
+    <input matInput placeholder="Store Name" formControlName="name"  required>
   </mat-form-field>
 
    <mat-form-field fxFlex="30">
-    <input matInput placeholder="Address" value="" [(ngModel)]="address">
+    <input matInput placeholder="Address" formControlName="address" required>
   </mat-form-field>
 
    <mat-form-field fxFlex="30">
-    <input matInput placeholder="Phone No" value="" [(ngModel)]="phone">
+    <input matInput placeholder="Phone No" formControlName="phone" required>
   </mat-form-field>
 
    <mat-form-field fxFlex="30">
-    <input matInput placeholder="Email" value="" [(ngModel)]="email">
+    <input matInput placeholder="Email" formControlName="email" required>
      </mat-form-field>
-
-     <mat-form-field fxFlex="30">
-    <input matInput placeholder="Location lat" value="{{lat}}" [(ngModel)]="lat">
+    <div fxFlex="30"></div>
+    <div fxFlex="30"></div>
+     <!-- <mat-form-field fxFlex="30">
+    <input matInput placeholder="Location lat" value="{{lat}}" [formControl]="lat">
   </mat-form-field>
 
    <mat-form-field fxFlex="30">
-    <input matInput placeholder="Location Lon" value="{{lng}}" [(ngModel)]="lng">
-  </mat-form-field>
+    <input matInput placeholder="Location Lon" value="{{lng}}" [formControl]="lng">
+  </mat-form-field> -->
 </div>
+ </form>
 <div fxLayout="row" fxLayoutAlign="end end" style="margin: 0px 20px;">
-   <button mat-raised-button color="primary" (click)="Submit(lat)">Submit</button>
+  <button mat-raised-button color="primary" type="submit" [disabled]="!profileForm.valid" (click)="onSubmit()">Submit</button>
+   <!-- <button mat-raised-button color="primary" (click)="Submit(lat)">Submit</button> -->
 </div>
+ 
+
 </div>

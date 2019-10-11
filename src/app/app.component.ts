@@ -56,6 +56,11 @@ getAllStore() {
 
   ngOnInit() {
     this.getAllStore();
-    this.router.navigate(['']);
-  }
+  //   if (confirm("Do you want to reload Browser!")) {
+  // this.router.navigate(['']);
+  //           }
+
+  this.router.navigate(['']);
+        }
+
 }

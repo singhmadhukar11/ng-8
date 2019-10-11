@@ -9,8 +9,9 @@ import { AddComponent } from './add/add.component';
 import { ViewComponent } from './view/view.component';
 import { MapViewComponent } from './map-view/map-view.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailComponent } from './detail/detail.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DetailComponent } from './detail/detail.component';
     MaterialModule,
     AgGridModule.withComponents([]),
     LeafletModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class MainModule { }
