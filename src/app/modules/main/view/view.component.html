@@ -17,7 +17,8 @@
     [rowData]="rowData"
     [columnDefs]="columnDefs"
     (rowClicked)='onRowClicked($event)'
-    (gridReady)="onGridReady($event)">
+    (gridReady)="onGridReady($event)"
+    [frameworkComponents]="frameworkComponents">
 </ag-grid-angular>
 <router-outlet></router-outlet>
 

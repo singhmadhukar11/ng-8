@@ -11,6 +11,7 @@ import { MapViewComponent } from './map-view/map-view.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailComponent } from './detail/detail.component';
+import { ButtonRendererComponent } from './view/button-renderer.component';
 
 
 @NgModule({
@@ -19,8 +20,10 @@ import { DetailComponent } from './detail/detail.component';
   AddComponent,
   ViewComponent,
   MapViewComponent,
-  DetailComponent
+  DetailComponent,
+  ButtonRendererComponent
   ],
+  entryComponents: [ButtonRendererComponent],
   imports: [
     CommonModule,
     MainRoutingModule,

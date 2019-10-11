@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { GlobalService } from '../../../global.service';
 import { Routes, RouterModule, Router } from '@angular/router';
 import { MainService } from '../main.service';
+import { ButtonRendererComponent } from './button-renderer.component';
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
@@ -10,8 +11,12 @@ import { MainService } from '../main.service';
 })
 export class ViewComponent implements OnInit {
 
-  constructor( private router: Router,private globalService:GlobalService, private mainService: MainService) { }
-
+  constructor( private router: Router,private globalService:GlobalService, private mainService: MainService) { 
+      this.frameworkComponents = {
+      buttonRenderer: ButtonRendererComponent,
+    }
+  }
+frameworkComponents: any;
   sendData = [];
 
 columnDefs = [
@@ -20,11 +25,19 @@ columnDefs = [
         {headerName: 'PHONE NO', field: 'phone', sortable: true, filter: true},
         {headerName: 'EMAIL', field: 'email', sortable: true, filter: true},
         {
-            field: "", 
+            field: "ACTIONS", 
             width: 110, 
-            cellRenderer: function clickNextRendererFunc(){
-                    // return '<button (click)="alert("Clicked")">Delete</button>';
-            }}
+            cellRenderer: 'buttonRenderer',
+            cellRendererParams: {
+        onClick: this.deleteRow.bind(this)
+      }
+            // cellRenderer: (data) => {
+    // return `<mat-icon class="mat-icon material-icons mat-icon-no-color" role="img" aria-hidden="true">
+    //    home</mat-icon>`;
+
+   // return `<button mat-button color="primary">Primary</button>`
+// }
+}
     ];
 
     rowData: any;
@@ -40,13 +53,13 @@ columnDefs = [
           })
      }
 
-  onRowClicked(event: any, index) {
-   console.log('row', event);
-   // this.deleteRow(event, index);
-    this.sendData = event.data;
-    this.mainService.shareRowdta = this.sendData;
-    this.router.navigate(['/main/detail']);
- }
+ //  onRowClicked(event: any, index) {
+ //   console.log('row', event);
+ //   this.deleteRow(event, index);
+ //    this.sendData = event.data;
+ //    this.mainService.shareRowdta = this.sendData;
+ //    this.router.navigate(['/main/detail']);
+ // }
 
 
 usersData :any = [];

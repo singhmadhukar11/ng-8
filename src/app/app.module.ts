@@ -8,9 +8,12 @@ import { AgGridModule } from 'ag-grid-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { ButtonRendererComponent } from './modules/main/view/button-renderer.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    // ButtonRendererComponent
   ],
   imports: [
     BrowserModule,
