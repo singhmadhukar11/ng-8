@@ -3,16 +3,18 @@
    <mat-card-title>LOGIN</mat-card-title>
    <mat-card-content>
       <!-- <form> -->
+         <form [formGroup]="loginForm" (ngSubmit)="submit()" autocomplete="off">
       	<div fxLayout="column" fxLayoutAlign="space-around center" >
          <mat-form-field >
-            <input matInput placeholder="USER ID"  [(ngModel)]="userId">
+            <input matInput placeholder="USER ID"  formControlName="userId">
          </mat-form-field>
          <mat-form-field >
-            <input matInput placeholder="PASSWORD"  [(ngModel)]="passWord">
+            <input matInput placeholder="PASSWORD"  formControlName="passWord">
          </mat-form-field>
-         <button mat-raised-button color="primary" (click)="submit(userId, passWord)">LOGIN</button>
-         <!-- <button mat-button color="primary" (click)="signup()">SIGNUP HERE</button> -->
+         <!-- <button mat-raised-button color="primary" (click)="submit(userId, passWord)">LOGIN</button> -->
+         <button mat-raised-button color="primary" (click)="submit()">LOGIN</button>
      </div>
+     </form>
       <!-- </form> -->
    </mat-card-content>
 </mat-card>

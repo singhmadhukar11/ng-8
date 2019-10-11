@@ -1,6 +1,4 @@
 <div>
-  
-
 <div>
   <mat-divider></mat-divider>
   <mat-toolbar  class="header-hgt40">
@@ -12,7 +10,7 @@
 </mat-toolbar>
 <mat-divider></mat-divider>
 </div>
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" autocomplete="off">
 <div fxLayout="row wrap" fxLayoutAlign="space-around center" style="margin-top: 1.5%;">
   <mat-form-field fxFlex="30">
     <input matInput placeholder="Store Name" formControlName="name"  required>

@@ -49,7 +49,7 @@ export class AppComponent {
 usersData :any = [];
 getAllStore() {
     this.globalService.getList().subscribe(response => {
-      console.log(response);
+      // console.log(response);
       this.usersData = response;
     })
   }
