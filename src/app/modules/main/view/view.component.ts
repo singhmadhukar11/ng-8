@@ -18,7 +18,7 @@ export class ViewComponent implements OnInit {
   }
 frameworkComponents: any;
   sendData = [];
-
+  private gridApi;
 columnDefs = [
         {headerName: 'STORE NAME', field: 'name', sortable: true, filter: true},
         {headerName: 'ADDRESS', field: 'address', sortable: true, filter: true},
@@ -27,16 +27,14 @@ columnDefs = [
         {
             field: "ACTIONS", 
             width: 110, 
-            cellRenderer: 'buttonRenderer',
-            cellRendererParams: {
-        onClick: this.deleteRow.bind(this)
-      }
-}
+            cellRenderer: 'buttonRenderer'
+        }
     ];
 
     rowData: any;
-
+    
   onGridReady(params) {
+    this.gridApi = params.api;
     params.api.sizeColumnsToFit();
    }
 
@@ -44,7 +42,6 @@ columnDefs = [
      this.mainService.removeItem(event, index).subscribe(data => {
             alert('Success');
           });
-
      }
 
  //  onRowClicked(event: any, index) {
@@ -54,10 +51,16 @@ columnDefs = [
  //    this.mainService.shareRowdta = this.sendData;
  //    this.router.navigate(['/main/detail']);
  // }
+
 refreshGrid(){
      // params.api.setRowData(this.rowData); // Refresh grid
-     this.router.navigate(['/main/view']);
-
+     // this.router.navigate(['/main/view']);
+      // this.gridApi.refreshCells();
+// this.gridApi.setRowData(this.rowData);
+this.rowData;
+}
+onRowClicked(){
+  console.log("Row Clicked");
 }
 
 usersData :any = [];

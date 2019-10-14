@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ICellRendererAngularComp } from 'ag-grid-angular';
 import { MainService } from '../main.service';
 import { Routes, RouterModule, Router } from '@angular/router';
-
+// import { ViewComponent } from './view.component';
 @Component({
   selector: 'app-button-renderer',
   template:`<button mat-icon-button  [matMenuTriggerFor]="menu">
@@ -39,6 +39,7 @@ viewRow($events){
      this.mainService.removeItem(this.params, index).subscribe(data => {
             alert('Success');
           });
+     // this.viewComponent.refreshGrid();
      }
 }
 
