@@ -32,6 +32,7 @@ if (navigator)
     response => console.log(response),
     err => console.log(err)
   );
+  this.profileForm.reset();
   
 }
 // updateName() {

@@ -31,12 +31,6 @@ columnDefs = [
             cellRendererParams: {
         onClick: this.deleteRow.bind(this)
       }
-            // cellRenderer: (data) => {
-    // return `<mat-icon class="mat-icon material-icons mat-icon-no-color" role="img" aria-hidden="true">
-    //    home</mat-icon>`;
-
-   // return `<button mat-button color="primary">Primary</button>`
-// }
 }
     ];
 
@@ -46,11 +40,11 @@ columnDefs = [
     params.api.sizeColumnsToFit();
    }
 
-
     deleteRow(event, index){
      this.mainService.removeItem(event, index).subscribe(data => {
             alert('Success');
-          })
+          });
+
      }
 
  //  onRowClicked(event: any, index) {
@@ -60,7 +54,11 @@ columnDefs = [
  //    this.mainService.shareRowdta = this.sendData;
  //    this.router.navigate(['/main/detail']);
  // }
+refreshGrid(){
+     // params.api.setRowData(this.rowData); // Refresh grid
+     this.router.navigate(['/main/view']);
 
+}
 
 usersData :any = [];
 getAllStudents() {

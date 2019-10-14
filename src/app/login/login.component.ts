@@ -9,7 +9,7 @@ import { FormBuilder} from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+ hide = true;
  loginForm = this.fb.group({
     userId: [''],
     passWord: ['']
