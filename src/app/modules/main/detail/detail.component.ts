@@ -22,7 +22,7 @@ export class DetailComponent implements OnInit {
       tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'),
       marker([ this.lat, this.lon ])
     ],
-    zoom: 5,
+    zoom: 10,
     center: latLng([ this.lat, this.lon  ])
   };
 
