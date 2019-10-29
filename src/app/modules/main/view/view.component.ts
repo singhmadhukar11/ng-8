@@ -42,7 +42,7 @@ frameworkComponents: any;
      // this.mainService.removeItem(event, index).subscribe(data => {
      //        alert('Success');
      //      });
-     this.rowData.slice();
+     this.rowData.slice(index, 1);
      }
 
  //  onRowClicked(event: any, index) {
@@ -54,8 +54,9 @@ frameworkComponents: any;
  // }
 
 refreshGrid(){
+  alert();
      // params.api.setRowData(this.rowData); // Refresh grid
-     this.router.navigate(['/main/view']);
+     // this.router.navigate(['/main/view']);
       // this.gridApi.refreshCells();
 // this.gridApi.setRowData(this.rowData);
 }

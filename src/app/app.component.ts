@@ -59,8 +59,6 @@ getAllStore() {
   //   if (confirm("Do you want to reload Browser!")) {
   // this.router.navigate(['']);
   //           }
-
-  this.router.navigate(['']);
         }
 
 }

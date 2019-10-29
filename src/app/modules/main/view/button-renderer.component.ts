@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ICellRendererAngularComp } from 'ag-grid-angular';
 import { MainService } from '../main.service';
 import { Routes, RouterModule, Router } from '@angular/router';
-// import { ViewComponent } from './view.component';
+import { ViewComponent } from './view.component';
 @Component({
   selector: 'app-button-renderer',
   template:`<button mat-icon-button  [matMenuTriggerFor]="menu">
@@ -21,7 +21,7 @@ export class ButtonRendererComponent implements ICellRendererAngularComp {
   agInit(params): void {
     this.params = params;
   }
-  constructor(private mainService:MainService, private router: Router){
+  constructor(private mainService:MainService, private router: Router, private viewComponent : ViewComponent){
   }
 
   refresh(params?: any): boolean {
@@ -34,12 +34,12 @@ viewRow($events){
   this.router.navigate(['/main/detail']);
 }
 
-  deleteRow($events, index){
+  deleteRow($events, index, data){
      this.params;
      this.mainService.removeItem(this.params, index).subscribe(data => {
             alert('Success');
           });
-     // this.viewComponent.refreshGrid();
+     this.viewComponent.deleteRow(index, data);
      }
 }
 
